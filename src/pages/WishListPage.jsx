@@ -13,7 +13,7 @@ export default function WishlistPAge() {
           <div className="flex gap-2 flex-col justify-center items-center">
             <h1 className="text-xl font-bold">Your wishlist is empty</h1>
             <Link
-              className="font-bold px-3 rounded-md py-1 w-fit bg-gray-500 "
+              className="font-bold px-3 rounded-md py-1 w-fit bg-black text-white hover:bg-slate-800 transition-all duration-200 "
               to="/"
             >
               Go To Home
