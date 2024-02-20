@@ -13,8 +13,8 @@ const DetailCardSkelton = () => {
           <div className="text-green-600 w-10 bg-white h-5 font-semibold text-3xl flex items-center"></div>
         </div>
         <div className="flex space-x-4  mb-4">
-          <button className="bg-blue-500 w-12 h-5 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300"></button>
-          <button className="bg-gray-300 w-12 h-5 hover:bg-gray-400 text-gray-700 font-semibold py-3 px-6 rounded-full transition duration-300"></button>
+          <button className="bg-black w-12 h-5 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full transition duration-300"></button>
+          <button className="bg-red-500 w-12 h-5 hover:bg-gray-400 text-gray-700 font-semibold py-3 px-6 rounded-full transition duration-300"></button>
         </div>
       </div>
     </div>

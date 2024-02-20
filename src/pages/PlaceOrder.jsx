@@ -35,7 +35,7 @@ export default function PlaceOrder() {
     setPaymentMethod(event.target.value);
   };
   return !paymentCompleted ? (
-    <form className="w-full pb-5 gap-y-5 flex md:justify-evenly md:flex-row flex-col px-5">
+    <form onSubmit={handleOrder} className="w-full pb-5 gap-y-5 flex md:justify-evenly md:flex-row flex-col px-5">
       <div className="flex  w-full md:w-fit items-center md:items-start flex-col gap-2">
         {/* address field */}
         <div>
@@ -69,7 +69,7 @@ export default function PlaceOrder() {
           />
         </div>
         <div>
-          <h1>Address 1:</h1>
+          <h1>Address</h1>
           <input
             ref={address1}
             required
@@ -78,16 +78,7 @@ export default function PlaceOrder() {
             className="w-[300px] px-2 py-1.5 outline-none border border-black rounded-md text-black"
           />
         </div>
-        <div>
-          <h1>Address 2:</h1>
-          <input
-            ref={address2}
-            required
-            type="text"
-            placeholder="City"
-            className="w-[300px] px-2 py-1.5 outline-none border border-black rounded-md text-black"
-          />
-        </div>
+        
         <div>
           <h1>Pincode:</h1>
           <input
@@ -179,7 +170,7 @@ export default function PlaceOrder() {
           </div>
         </div>
         <button
-          onClick={handleOrder}
+          // onClick={handleOrder}
           className="bg-yellow-500 hover:bg-yellow-600 transition-all duration-200 font-bold  px-4 py-2 mt-2 rounded-lg w-[200px]"
         >
           Place Order
@@ -189,18 +180,18 @@ export default function PlaceOrder() {
   ) : (
     <div className="flex flex-col items-center justify-center px-2 mb-3">
       <div className="max-w-md w-full p-8 bg-white rounded-lg shadow-lg">
-        <h1 className="md:text-3xl text-xl font-bold mb-4 text-center">
-          Thank You {name.current && name.current.value} for Exploring My
-          Project!
+        <h1 className="md:text-2xl text-xl flex-col flex font-bold mb-4 text-center">
+          <p>Thank You </p><span className="text-blue-500">{name.current && name.current.value}</span> <p>for Exploring My
+          Project!</p>
         </h1>
 
-        <p className="md:text-lg text-base mb-2 text-center">
+        <p className="text-base mb-2 text-center">
           This is just a demo project, so you don't need to make any payment.
         </p>
-        <p className="md:text-lg mb-2 text-center">
+        <p className="mb-2 text-center">
           I appreciate your time and would love to hear your feedback.
         </p>
-        <p className="text-lg mb-8 text-center font-bold">Thank you!</p>
+        {/* <p className="text-lg mb-8 text-center font-bold">Thank you!</p> */}
         <h1 className="text-lg text-center font-bold mb-2">
           Please give you Feedback
         </h1>

@@ -12,7 +12,7 @@ export default function NavBar() {
     const wishList=useSelector((store)=>store.wishList);
   return (
     <div className="fixed prevent-select z-50 left-0 right-0 bg-white w-screen items-center  flex justify-center shadow-md">
-      <div className="w-full flex py-2 px-4  justify-between md:max-w-[90%]">
+      <div className="w-full flex px-4  justify-between md:max-w-[90%]">
         <div>
           <Link to="/">
           <img className="w-12 md:w-20" src={logo} alt="" />

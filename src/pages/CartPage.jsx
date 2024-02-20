@@ -15,13 +15,13 @@ export default function CartPage() {
     setTotalAmount(total);
   }, [cartItem]);
   return (
-    <div className="w-full pb-5 gap-y-5 flex md:justify-around md:flex-row flex-col px-5">
-      <div className="flex  w-full md:w-[65%] items-center md:items-start flex-col gap-2">
+    <div className="w-full flex-wrap gap-x-3 overflow-hidden justify-center pb-5 gap-y-5 flex px-5">
+      <div className="flex flex-row flex-wrap justify-center  w-fit items-center md:items-start md:flex-col gap-2">
         {cartItem.length === 0 ? (
           <div className="flex gap-2 w-full flex-col justify-center items-center">
             <h1 className="text-xl font-bold">Your cart is empty</h1>
             <Link
-              className="font-bold px-3 rounded-md py-1 w-fit bg-gray-500 "
+              className="font-bold px-3 rounded-md py-1 w-fit bg-black "
               to="/"
             >
               Go To Home
@@ -34,7 +34,7 @@ export default function CartPage() {
         )}
       </div>
       {cartItem.length > 0 && (
-        <div className="border flex items-center flex-col md:w-[300px] ">
+        <div className="flex items-center flex-col md:w-[300px] ">
           <h1 className="flex items-center">
             <p className="md:text-xl font-semibold">
               Subtotal{`(${cartItem.length} items):`}

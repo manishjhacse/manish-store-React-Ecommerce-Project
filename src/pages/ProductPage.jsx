@@ -6,17 +6,6 @@ import useFetch from "../hooks/useFetch";
 import Search from "../components/Search";
 
 export default function ProductPage() {
-//   const [products, setProducts] = useState([]);
-// const [loading, setLoading] = useState(false)
-//   useEffect(() => {
-//     (async () => {
-//         setLoading(true)
-//       const res = await axios.get("https://dummyjson.com/products");
-//       setProducts(res.data.products);
-//     //   console.log(res)
-//       setLoading(false);
-//     })();
-//   }, []);
 const [selectedCategory, setSelectedCategory] = useState("")
 const [url, setUrl] = useState("?limit=0")
 const { products, loading } = useFetch(selectedCategory+url);

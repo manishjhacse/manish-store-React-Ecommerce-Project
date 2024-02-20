@@ -20,7 +20,7 @@ function App() {
   return (
     <div className="bg-gray-200 min-h-screen pb-2">
       <NavBar/>
-      <div className="pt-20 min-h-[calc(100vh-50px)] md:pt-28">
+      <div className="pt-16 min-h-[calc(100vh-50px)] md:pt-24">
         <Routes path="/">
           <Route path="" element={<ProductPage/>}/>
           <Route path="/cart" element={<CartPage/>}/>

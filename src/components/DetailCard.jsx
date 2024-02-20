@@ -11,7 +11,7 @@ import { addToCart } from "../store/CartSlice";
 import { addToWishList, removeFromWishList } from "../store/Wishlist";
 import { Link } from "react-router-dom";
 
-const DetailCard = ({ productID }) => {
+const DetailCard = ({ productID}) => {
   const cart = useSelector((state) => state.cart);
   const wishList = useSelector((store) => store.wishList);
   const dispatch = useDispatch();
@@ -48,7 +48,7 @@ const DetailCard = ({ productID }) => {
   return loading ? (
     <DetailCardSkelton />
   ) : (
-    <div className="w-full  max-w-[1080px] flex md:flex-row flex-col items-center">
+    <div className="w-full min-h-[calc(100vh-50px)] max-w-[1080px] flex md:flex-row flex-col items-start md:py-14">
       <div className=" md:w-1/2 w-[80%] overflow-hidden">
         <ProductCarousel images={product?.images} />
       </div>
