@@ -1,13 +1,17 @@
 import React from "react";
 import { useForm, ValidationError } from "@formspree/react";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { clearCart } from "../store/CartSlice";
 
 export default function Form() {
-    const navigate=useNavigate();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [state, handleSubmit] = useForm("meqygdaw");
   if (state.succeeded) {
     setTimeout(() => {
-        navigate("/")
+      navigate("/");
+      dispatch(clearCart());
     }, 2000);
     return (
       <div className="w-full flex flex-col items-center">

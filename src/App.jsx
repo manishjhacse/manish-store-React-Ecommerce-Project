@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import viteLogo from "/vite.svg";
 import "./App.css";
 import NavBar from "./components/NavBar";
 import ProductPage from "./pages/ProductPage";
@@ -15,12 +14,13 @@ import DetailPage from "./pages/DetailPage";
 import PlaceOrder from "./pages/PlaceOrder";
 import Footer from "./components/Footer";
 import PageNotFound from "./pages/PageNotFound";
+import DemoComponent from "./components/DemoComponent";
 function App() {
 
   return (
     <div className="bg-gray-200 min-h-screen pb-2">
       <NavBar/>
-      <div className="pt-24 min-h-[calc(100vh-50px)] md:pt-32">
+      <div className="pt-20 min-h-[calc(100vh-50px)] md:pt-28">
         <Routes path="/">
           <Route path="" element={<ProductPage/>}/>
           <Route path="/cart" element={<CartPage/>}/>
@@ -30,6 +30,7 @@ function App() {
           <Route path="/placeorder" element={<PlaceOrder/>}/>
           <Route path="*" element={<PageNotFound/>}/>
         </Routes>
+        {/* <DemoComponent/> */}
       </div>
       <Footer/>
     </div>

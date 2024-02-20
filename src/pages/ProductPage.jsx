@@ -23,8 +23,8 @@ const { products, loading } = useFetch(selectedCategory+url);
   return (
     <div className="w-full px-2 flex flex-col gap-5 items-center ">
         <Search show={true} selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory} setUrl={setUrl}/>
-      <div className="w-full flex flex-wrap gap-3 justify-center max-w-[1080px] px-2">
-        {
+      <div className="w-full flex flex-wrap gap-3 justify-center px-3 ">
+       {
             loading && [1,2,3,4,5,6,7,8,9,10].map((index)=><Skelton key={index}/>) 
         }
         {!loading && products?.map((product) => {

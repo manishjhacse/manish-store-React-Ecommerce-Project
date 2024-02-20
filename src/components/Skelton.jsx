@@ -1,5 +1,5 @@
-import React from 'react'
-import Img from './Img'
+import React from "react";
+import Img from "./Img";
 
 export default function Skelton() {
   return (
@@ -41,7 +41,8 @@ export default function Skelton() {
         </div>
 
       }
-      
+
     </div>
-  )
+   
+  );
 }

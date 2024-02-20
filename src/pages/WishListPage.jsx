@@ -8,7 +8,7 @@ export default function WishlistPAge() {
   const wishList = useSelector((store) => store.wishList);
   return (
     <div className="w-full flex justify-center">
-      <div className="w-full flex flex-wrap gap-3 justify-center max-w-[1080px] px-2">
+      <div className="w-full flex flex-wrap gap-3 justify-center px-2">
         {wishList.length === 0 ? (
           <div className="flex gap-2 flex-col justify-center items-center">
             <h1 className="text-xl font-bold">Your wishlist is empty</h1>

@@ -6,7 +6,7 @@ import { addToCart } from "../store/CartSlice";
 import { IoIosHeart } from "react-icons/io";
 import { addToWishList, removeFromWishList } from "../store/Wishlist";
 import { CiDiscount1 } from "react-icons/ci";
-import { toast } from "react-toastify";
+import { FaArrowRight } from "react-icons/fa";
 import Img from "./Img";
 import { Link } from "react-router-dom";
 export default function ProductCard({ product }) {
@@ -68,7 +68,7 @@ export default function ProductCard({ product }) {
             </div>
             <div className="flex items-center">
               {product.discountPercentage && (
-                <span className="text-red-600 text-sm font-semibold mr-1">
+                <span className="text-red-600 font-semibold mr-1">
                   <CiDiscount1 />
                 </span>
               )}
@@ -87,15 +87,15 @@ export default function ProductCard({ product }) {
           </div>
         </Link>
         {cart.some((item) => item.id === product?.id) ? (
-          <Link to='/cart'>
-            <button className="w-full bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 mt-2 rounded">
-              Checkout
+          <Link to="/cart">
+            <button className="w-full flex items-center justify-center gap-2 bg-gray-700 hover:bg-gray-900 text-white font-semibold py-2 px-4 mt-2 rounded">
+              Checkout <FaArrowRight />
             </button>
           </Link>
         ) : (
           <button
             onClick={handleAddItem}
-            className="w-full bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 mt-2 rounded"
+            className="w-full bg-black hover:bg-slate-800 text-white font-semibold py-2 px-4 mt-2 rounded-md"
           >
             Add to Cart
           </button>

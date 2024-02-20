@@ -78,12 +78,12 @@ const DetailCard = ({ productID }) => {
             </div>
           )}
         </div>
-        <div className="flex gap-x-2 md:space-x-4 mb-4">
+        <div className="flex items-center  w-full md:flex-row flex-col mb-3 md:space-x-4 md:mb-4">
           {cart.some((item) => item.id === product?.id) ? (
-            <Link to="/cart">
+            <Link className="w-full md:w-fit" to="/cart">
               <button
                 onClick={handleAddItem}
-                className="bg-gray-500 text-sm md:text-base hover:bg-gray-600 text-white font-semibold md:py-3 md:px-6 px-2 py-1 rounded-md md:rounded-full transition duration-300"
+                className="md:w-fit w-[100%]  flex text-sm md:text-base items-center justify-center gap-2 bg-gray-700 hover:bg-gray-900 text-white font-semibold py-2 px-8 mt-2 rounded-full"
               >
                 Checkout
               </button>
@@ -91,22 +91,23 @@ const DetailCard = ({ productID }) => {
           ) : (
             <button
               onClick={handleAddItem}
-              className="bg-blue-500 text-sm md:text-base hover:bg-blue-600 text-white font-semibold md:py-3 md:px-6 px-2 py-1 rounded-md md:rounded-full transition duration-300"
+              className="md:w-fit w-full bg-black text-sm md:text-base hover:bg-slate-800 text-white font-semibold py-2 px-8 mt-2 rounded-full"
             >
               Add to Cart
             </button>
           )}
+
           {wishList.some((item) => item.id === product?.id) ? (
             <button
               onClick={handleRemoveWishList}
-              className="bg-gray-300  text-sm md:text-base hover:bg-gray-400 text-black font-semibold md:py-3 md:px-6 px-2 py-1 rounded-md md:rounded-full transition duration-300"
+              className="md:w-fit w-full bg-red-500 text-sm md:text-base hover:bg-red-700 text-white font-semibold py-2 px-8 mt-2 rounded-full"
             >
               Remove from Wishlist
             </button>
           ) : (
             <button
               onClick={handleAddWishList}
-              className="bg-gray-300 text-sm md:text-base hover:bg-gray-400 text-black font-semibold md:py-3 md:px-6 px-2 py-1 rounded-md md:rounded-full transition duration-300"
+              className="md:w-fit w-full bg-red-500 text-sm md:text-base hover:bg-red-700 text-white font-semibold py-2 px-8 mt-2 rounded-full"
             >
               Add to Wishlist
             </button>

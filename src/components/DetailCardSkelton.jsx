@@ -18,6 +18,7 @@ const DetailCardSkelton = () => {
         </div>
       </div>
     </div>
+    
   );
 };
 
