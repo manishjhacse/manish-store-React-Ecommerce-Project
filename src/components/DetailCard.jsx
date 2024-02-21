@@ -11,7 +11,7 @@ import { addToCart } from "../store/CartSlice";
 import { addToWishList, removeFromWishList } from "../store/Wishlist";
 import { Link } from "react-router-dom";
 
-const DetailCard = ({ productID}) => {
+const DetailCard = ({ productID,setCategory}) => {
   const cart = useSelector((state) => state.cart);
   const wishList = useSelector((store) => store.wishList);
   const dispatch = useDispatch();
@@ -36,6 +36,7 @@ const DetailCard = ({ productID}) => {
       try {
         const response = await axios.get(`${BASE_URL}/${productID}`);
         setProduct(response.data);
+        setCategory(response.data.category)
         setLoading(false);
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -43,13 +44,13 @@ const DetailCard = ({ productID}) => {
       }
     };
     fetchProduct();
-  }, []);
+  }, [productID]);
 
   return loading ? (
     <DetailCardSkelton />
   ) : (
-    <div className="w-full min-h-[calc(100vh-50px)] max-w-[1080px] flex md:flex-row flex-col items-start md:py-14">
-      <div className=" md:w-1/2 w-[80%] overflow-hidden">
+    <div className="w-full max-w-[1080px] px-3 flex md:flex-row flex-col items-start md:py-14">
+      <div className=" md:w-1/2  w-[100%] overflow-hidden">
         <ProductCarousel images={product?.images} />
       </div>
       <div className="p-8">
