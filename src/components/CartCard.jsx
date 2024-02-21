@@ -30,14 +30,14 @@ export default function CartCard({ item }) {
   };
 
   return (
-    <div className="flex  md:h-fit bg-white rounded-md px-3 py-2 relative items-start shadow-md md:w-[900px] gap-1 md:items-center md:gap-5 w-[250px] flex-col md:flex-row">
+    <div className="flex  md:h-fit bg-white rounded-md px-3 py-2 relative items-center shadow-md md:w-[900px] gap-1  md:gap-5 w-[250px] flex-col md:flex-row">
       <Link to={`/details/${item.id}`}>
         <div className="h-[150px] w-[200px] prevent-select flex justify-center items-center overflow-hidden">
           {/* <img className="w-full " src={product.image} alt="" /> */}
           <img src={item.thumbnail} className=" object-cover" alt="" />
         </div>
       </Link>
-      <div className="flex flex-col items-start gap-1">
+      <div className="flex flex-col w-full items-start gap-1">
         <Link to={`/details/${item.id}`}>
           <h1 className=" font-bold text-[14px]">{item.title}</h1>
           <div className="md:block hidden"> {item.description} </div>
