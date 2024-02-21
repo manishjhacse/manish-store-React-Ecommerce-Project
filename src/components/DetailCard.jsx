@@ -10,8 +10,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../store/CartSlice";
 import { addToWishList, removeFromWishList } from "../store/Wishlist";
 import { Link } from "react-router-dom";
+import ScrollToTop from "./ScrollToTop";
 
-const DetailCard = ({ productID,setCategory}) => {
+const DetailCard = ({ productID, setCategory }) => {
   const cart = useSelector((state) => state.cart);
   const wishList = useSelector((store) => store.wishList);
   const dispatch = useDispatch();
@@ -36,7 +37,7 @@ const DetailCard = ({ productID,setCategory}) => {
       try {
         const response = await axios.get(`${BASE_URL}/${productID}`);
         setProduct(response.data);
-        setCategory(response.data.category)
+        setCategory(response.data.category);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching product:", error);
@@ -118,6 +119,7 @@ const DetailCard = ({ productID,setCategory}) => {
           Stock Left: {product?.stock}
         </div>
       </div>
+      <ScrollToTop/>
     </div>
   );
 };

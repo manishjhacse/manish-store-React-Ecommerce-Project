@@ -3,6 +3,7 @@ import CartCard from "../components/CartCard";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { PiCurrencyInrBold } from "react-icons/pi";
+import ScrollToTop from "../components/ScrollToTop";
 
 export default function CartPage() {
   const cartItem = useSelector((store) => store.cart);
@@ -64,6 +65,7 @@ export default function CartPage() {
           </Link>
         </div>
       )}
+      <ScrollToTop/>
     </div>
   );
 }
