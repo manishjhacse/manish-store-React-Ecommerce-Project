@@ -12,8 +12,12 @@ export const wishListSlice=createSlice({
             const newState= state.filter((item)=>item.id!==action.payload.id)
             localStorage.getItem("wishList",JSON.stringify(newState))
             return newState;
+        },
+        clearWishList:(state)=>{
+            localStorage.setItem('wishList', JSON.stringify([]))
+            return [];
         }
     }
 })
 export default wishListSlice.reducer;
-export const {addToWishList,removeFromWishList}=wishListSlice.actions;
+export const {addToWishList,removeFromWishList,clearWishList}=wishListSlice.actions;
